@@ -1,11 +1,47 @@
-/* #loginView, #signupView {
-    display: none;
+/* Light Mode */
+
+/* Text */
+.lm-btn{
+    color: #F6E6DA;
 }
 
-.active {
-    display: block;
-} */
-/* 
-.hide {
-    display: none;
-} */
+/* Button */
+.lm-btn{
+    color: black;
+    background-color: #F6E6DA;
+    border-color: #F6E6DA;
+}
+
+.lm-btn:hover{
+    color: black;
+    background-color: #F6E6DA;
+    border-color: #F6E6DA;
+    opacity: 75%;
+}
+
+/* Dark Mode */
+
+/* Text */
+.black-txt, .black-txt:link, .black-txt:visited, .black-txt:hover, .black-txt:link:active, .black-txt:visited:active {
+    color: black;
+    cursor: pointer;
+}
+
+.dm-txt, .dm-txt:link, .dm-txt:visited, .dm-txt:hover, .dm-txt:link:active, .dm-txt:visited:active {
+    color: #E57A7A;
+    cursor: pointer;
+}
+
+/* Button */
+.dm-btn {
+    color: white;
+    background-color: #E57A7A;
+    border-color: #E57A7A;
+}
+
+.dm-btn:hover {
+    color: white;
+    background-color: #E57A7A !important;
+    border-color: #E57A7A !important;
+    opacity: 75%;
+}

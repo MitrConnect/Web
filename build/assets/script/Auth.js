@@ -1,3 +1,4 @@
+
 // Different screens
 loginView = document.getElementById("loginView");
 signupView = document.getElementById("signupView");
@@ -42,5 +43,15 @@ showForgotPwd.onclick = function() {
   signupView.classList.add("d-none");
   forgotPwdView.classList.remove("d-none");
 }
+
 // -----------------------------------
 
+const hash = window.location.hash.slice(1).toLowerCase();
+
+if (hash == "createaccount") {
+    showSignup.click();
+} else if (hash == "forgotpassword") {
+    showForgotPwd.click();
+}
+
+// -----------------------------------
