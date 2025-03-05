@@ -11,7 +11,9 @@ module.exports = {
         ]
     },
     entry: [
-        './src/Config/firebase.config.js'
+        './src/firebase/config.js',
+        './src/firebase/Auth.js',
+        './src/Objects.js'
     ],
     output: {
         path: path.resolve(__dirname, 'build'),

@@ -19,29 +19,37 @@ forgotPwdBtn = document.getElementById("forgotPwdBtn");
 signupView.classList.add("d-none");
 forgotPwdView.classList.add("d-none");
 
+// Init popup
+const popup = document.getElementById("popup")
+
+
 // -----------------------------------
 showLogin.onclick = function() {
-  loginView.classList.remove("d-none");
-  signupView.classList.add("d-none");
-  forgotPwdView.classList.add("d-none");
+    popup.classList.add("d-none");
+    loginView.classList.remove("d-none");
+    signupView.classList.add("d-none");
+    forgotPwdView.classList.add("d-none");
 }
 
 showLogin2.onclick = function() {
-  loginView.classList.remove("d-none");
-  signupView.classList.add("d-none");
-  forgotPwdView.classList.add("d-none");
+    popup.classList.add("d-none");
+    loginView.classList.remove("d-none");
+    signupView.classList.add("d-none");
+    forgotPwdView.classList.add("d-none");
 }
 
 showSignup.onclick = function() {
-  loginView.classList.add("d-none");
-  signupView.classList.remove("d-none");
-  forgotPwdView.classList.add("d-none");
+    popup.classList.add("d-none");
+    loginView.classList.add("d-none");
+    signupView.classList.remove("d-none");
+    forgotPwdView.classList.add("d-none");
 }
 
 showForgotPwd.onclick = function() {
-  loginView.classList.add("d-none");
-  signupView.classList.add("d-none");
-  forgotPwdView.classList.remove("d-none");
+    popup.classList.add("d-none");
+    loginView.classList.add("d-none");
+    signupView.classList.add("d-none");
+    forgotPwdView.classList.remove("d-none");
 }
 
 // -----------------------------------
@@ -53,5 +61,10 @@ if (hash == "createaccount") {
 } else if (hash == "forgotpassword") {
     showForgotPwd.click();
 }
+
+// -----------------------------------
+
+// popup.innerText = "This is a popup message!";
+// popup.classList.remove("d-none")
 
 // -----------------------------------

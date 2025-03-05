@@ -1,3 +1,23 @@
+/* body {
+    position: relative;
+    background: none !important;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../Icons/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+} */
+
+
 /* Light Mode */
 
 /* Text */
@@ -24,6 +44,12 @@
 /* Text */
 .black-txt, .black-txt:link, .black-txt:visited, .black-txt:hover, .black-txt:link:active, .black-txt:visited:active {
     color: black;
+    cursor: pointer;
+}
+
+.black-txt:hover {
+    color: black;
+    opacity: 75%;
     cursor: pointer;
 }
 
