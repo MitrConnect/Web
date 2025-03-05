@@ -3,7 +3,6 @@ loginView = document.getElementById("loginView");
 signupView = document.getElementById("signupView");
 forgotPwdView = document.getElementById("forgotPwdView");
 
-
 export const LoginUser = function() {
     return {
         email: loginView.querySelector("#email").value,
@@ -28,3 +27,9 @@ export const ForgotPassword = function() {
         submit: forgotPwdView.querySelector("#submitBtn")
     }
 }
+
+// export const SignOut = function() {
+//     return {
+//         submit: document.getElementById("")
+//     }
+// }

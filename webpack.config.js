@@ -13,7 +13,7 @@ module.exports = {
     entry: [
         './src/firebase/config.js',
         './src/firebase/Auth.js',
-        './src/Objects.js'
+        './src/Objects/OAuth.js'
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
