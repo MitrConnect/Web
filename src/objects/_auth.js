@@ -1,9 +1,6 @@
-
-loginView = document.getElementById("loginView");
-signupView = document.getElementById("signupView");
-forgotPwdView = document.getElementById("forgotPwdView");
-
 export const LoginUser = function() {
+    loginView = document.getElementById("loginView");
+
     return {
         email: loginView.querySelector("#email").value,
         password: loginView.querySelector("#password").value,
@@ -13,6 +10,8 @@ export const LoginUser = function() {
 }
 
 export const CreateUser = function() {
+    signupView = document.getElementById("signupView");
+
     return {
         email: signupView.querySelector("#email").value,
         password: signupView.querySelector("#password").value,
@@ -22,14 +21,16 @@ export const CreateUser = function() {
 }
 
 export const ForgotPassword = function() {
+    forgotPwdView = document.getElementById("forgotPwdView");
+
     return {
         email: forgotPwdView.querySelector("#email").value,
         submit: forgotPwdView.querySelector("#submitBtn")
     }
 }
 
-// export const SignOut = function() {
-//     return {
-//         submit: document.getElementById("")
-//     }
-// }
+export const SignOut = function() {
+    return {
+        submit: document.getElementById("signOutBtn")
+    }
+}

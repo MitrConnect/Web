@@ -12,8 +12,9 @@ module.exports = {
     },
     entry: [
         './src/firebase/config.js',
-        './src/firebase/Auth.js',
-        './src/Objects/OAuth.js'
+        './src/firebase/auth.js',
+        './src/objects/_auth.js',
+        './src/firebase/screen_manager.js'
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
