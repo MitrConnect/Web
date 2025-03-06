@@ -15,15 +15,18 @@ const pathname = {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     if (winLocation.pathname == pathname.auth && winHash == "forgotpassword") {
-      window.location.replace(`${winLocation.origin}${pathname.auth}#forgotpassword`);
+      document.getElementById("showLogin2").parentElement.classList.add("d-none");
+      window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     } else if (winLocation.pathname != pathname.home) {
-      window.location.replace(`${winLocation.origin}${pathname.home}`);
+      window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
     }
   } else {
     if (winLocation.pathname != pathname.auth) {
-      window.location.replace(`${winLocation.origin}${pathname.auth}`);
+      window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     }
   }
+
+  console.log(winLocation);
 });
 
 export function getCurrentScreen() {
@@ -31,9 +34,7 @@ export function getCurrentScreen() {
 }
 
 
-
 // Helper Functions
-
 function getKeyByValue(object, value) {
   return Object.keys(object).find(key => object[key] === value);
 }
