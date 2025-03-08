@@ -1,4 +1,3 @@
-import { doc } from "firebase/firestore";
 import { auth } from "./config.js";
 import { onAuthStateChanged } from "firebase/auth";
 
