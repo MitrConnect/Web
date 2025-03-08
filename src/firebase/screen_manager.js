@@ -19,6 +19,7 @@ onAuthStateChanged(auth, (user) => {
       window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     } else if (winLocation.pathname != pathname.home) {
       window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
+    } else {
       onHashChange();
     }
   } else {
@@ -31,16 +32,19 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function onHashChange() {
+  const hash = window.location.hash.slice(1);
   document.getElementById("HomeView").classList.add("d-none");
   document.getElementById("ExploreView").classList.add("d-none");
   document.getElementById("ActivityView").classList.add("d-none");
   document.getElementById("ChatView").classList.add("d-none");
-
-  if (window.location.hash.slice(1) == ""){
+  
+  if (hash == ""){
     document.getElementById("HomeView").classList.remove("d-none");
   } else {
-    document.getElementById(`${window.location.hash.slice(1)}View`).classList.remove("d-none");
+    document.getElementById(`${hash}View`).classList.remove("d-none");
   }
+
+  // console.log(hash);
 }
 
 window.addEventListener('hashchange', function() {
