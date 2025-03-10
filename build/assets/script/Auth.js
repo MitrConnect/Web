@@ -1,66 +1,45 @@
+$(document).ready(function() {
+    // Init Views
+    $.get(`Views/loginView.html`, function(data) { $("#authContainer").append(data); });
+    $.get(`Views/signupView.html`, function(data) { $("#authContainer").append(data); });
+    $.get(`Views/forgotPwdView.html`, function(data) { $("#authContainer").append(data); });
+    
+    function showView(className){
+        $("#loginView").addClass("d-none");
+        $("#signupView").addClass("d-none");
+        $("#forgotPwdView").addClass("d-none");
+        $(`#${className}`).removeClass("d-none");
+    }
 
-// Different screens
-loginView = document.getElementById("loginView");
-signupView = document.getElementById("signupView");
-forgotPwdView = document.getElementById("forgotPwdView");
+    // Event Listerners
+    $("#showSignup").click(function() { showView("signupView"); });
+    $("#showLogin").click(function() { showView("loginView"); });
+    $("#showLogin2").click(function() { showView("loginView"); });
+    $("#showForgotPwd").click(function() { showView("forgotPwdView"); });
+      
+    window.addEventListener('hashchange', function() {
+        const hash = window.location.hash.slice(1).toLowerCase();
 
-// Button to switch between screens
-showLogin = document.getElementById("showLogin");
-showLogin2 = document.getElementById("showLogin2");
-showSignup = document.getElementById("showSignup");
-showForgotPwd = document.getElementById("showForgotPwd");
+        if (hash == "createaccount") {
+            showView("signupView");
+        } else if (hash == "forgotpassword") {
+            showView("forgotPwdView");
+        } else {
+            showView("loginView");
+        }
+    });
 
-// Auth button in each screens
-createAccountBtn = document.getElementById("createAccountBtn");
-loginBtn = document.getElementById("loginBtn");
-forgotPwdBtn = document.getElementById("forgotPwdBtn");
+    initViews();
+    showView(loginView);
+});
 
-// Init View Stage 
-signupView.classList.add("d-none");
-forgotPwdView.classList.add("d-none");
+
 
 // Init popup
-const popup = document.getElementById("popup")
-
-
-// -----------------------------------
-showLogin.onclick = function() {
-    popup.classList.add("d-none");
-    loginView.classList.remove("d-none");
-    signupView.classList.add("d-none");
-    forgotPwdView.classList.add("d-none");
-}
-
-showLogin2.onclick = function() {
-    popup.classList.add("d-none");
-    loginView.classList.remove("d-none");
-    signupView.classList.add("d-none");
-    forgotPwdView.classList.add("d-none");
-}
-
-showSignup.onclick = function() {
-    popup.classList.add("d-none");
-    loginView.classList.add("d-none");
-    signupView.classList.remove("d-none");
-    forgotPwdView.classList.add("d-none");
-}
-
-showForgotPwd.onclick = function() {
-    popup.classList.add("d-none");
-    loginView.classList.add("d-none");
-    signupView.classList.add("d-none");
-    forgotPwdView.classList.remove("d-none");
-}
+const popup = document.getElementById("popup");
 
 // -----------------------------------
 
-const hash = window.location.hash.slice(1).toLowerCase();
-
-if (hash == "createaccount") {
-    showSignup.click();
-} else if (hash == "forgotpassword") {
-    showForgotPwd.click();
-}
 
 // -----------------------------------
 

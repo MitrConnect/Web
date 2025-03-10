@@ -31,26 +31,6 @@ onAuthStateChanged(auth, (user) => {
   console.log(winLocation);
 });
 
-function onHashChange() {
-  const hash = window.location.hash.slice(1);
-  document.getElementById("HomeView").classList.add("d-none");
-  document.getElementById("ExploreView").classList.add("d-none");
-  document.getElementById("ActivityView").classList.add("d-none");
-  document.getElementById("ChatView").classList.add("d-none");
-  
-  if (hash == ""){
-    document.getElementById("HomeView").classList.remove("d-none");
-  } else {
-    document.getElementById(`${hash}View`).classList.remove("d-none");
-  }
-
-  // console.log(hash);
-}
-
-window.addEventListener('hashchange', function() {
-  onHashChange();
-});
-
 export function getCurrentScreen() {
   return getKeyByValue(pathname, window.location.pathname)
 }

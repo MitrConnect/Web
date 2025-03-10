@@ -3,8 +3,7 @@ import { getCurrentScreen } from "./screen_manager.js"
 import { LoginUser, CreateUser, ForgotPassword, SignOut } from "../objects/_auth.js"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, validatePassword, signOut } from "firebase/auth";
 
-
-if (getCurrentScreen() == "auth"){
+if (getCurrentScreen() == "auth") {
   // API Call for Logging in user
   LoginUser().submit.onclick = function() {
     let userInfo = LoginUser();
@@ -47,9 +46,7 @@ if (getCurrentScreen() == "auth"){
     // Implement here
 
   }
-}
-
-if (getCurrentScreen() == "home") {
+} else if (getCurrentScreen() == "home") {
   // API Call for User to Sign Out
   SignOut().submit.onclick = function() {
     signOut(auth).then(() => {

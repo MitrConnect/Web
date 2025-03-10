@@ -1,5 +1,6 @@
 export const LoginUser = function() {
-    loginView = document.getElementById("loginView");
+    const loginView = document.getElementById("loginView");
+    // if (!loginView) return null;
 
     return {
         email: loginView.querySelector("#email").value,
@@ -10,7 +11,8 @@ export const LoginUser = function() {
 }
 
 export const CreateUser = function() {
-    signupView = document.getElementById("signupView");
+    const signupView = document.getElementById("signupView");
+    // if (!signupView) return null;
 
     return {
         email: signupView.querySelector("#email").value,
@@ -21,7 +23,8 @@ export const CreateUser = function() {
 }
 
 export const ForgotPassword = function() {
-    forgotPwdView = document.getElementById("forgotPwdView");
+    const forgotPwdView = document.getElementById("forgotPwdView");
+    // if (!forgotPwdView) return null;
 
     return {
         email: forgotPwdView.querySelector("#email").value,
