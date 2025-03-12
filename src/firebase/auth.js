@@ -46,6 +46,7 @@ if (getCurrentScreen() == "auth") {
     // Implement here
 
   }
+  
 } else if (getCurrentScreen() == "home") {
   // API Call for User to Sign Out
   SignOut().submit.onclick = function() {

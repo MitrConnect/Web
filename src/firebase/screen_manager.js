@@ -19,8 +19,7 @@ onAuthStateChanged(auth, (user) => {
       window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     } else if (winLocation.pathname != pathname.home) {
       window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
-    } else {
-      onHashChange();
+      // More Complex logic to be implement here!
     }
   } else {
     if (winLocation.pathname != pathname.auth) {

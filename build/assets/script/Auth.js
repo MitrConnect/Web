@@ -1,9 +1,13 @@
 $(document).ready(function() {
     // Init Views
-    $.get(`Views/loginView.html`, function(data) { $("#authContainer").append(data); });
-    $.get(`Views/signupView.html`, function(data) { $("#authContainer").append(data); });
-    $.get(`Views/forgotPwdView.html`, function(data) { $("#authContainer").append(data); });
-    
+    $.when(
+        $.get(`Views/Auth/loginView.html`, function(data) { $("#authContainer").append(data); }),
+        $.get(`Views/Auth/signupView.html`, function(data) { $("#authContainer").append(data); }),
+        $.get(`Views/Auth/forgotPwdView.html`, function(data) { $("#authContainer").append(data); })
+    ).then(function() {
+        hashHandler();
+    });
+
     function showView(className){
         $("#loginView").addClass("d-none");
         $("#signupView").addClass("d-none");
@@ -11,13 +15,7 @@ $(document).ready(function() {
         $(`#${className}`).removeClass("d-none");
     }
 
-    // Event Listerners
-    $("#showSignup").click(function() { showView("signupView"); });
-    $("#showLogin").click(function() { showView("loginView"); });
-    $("#showLogin2").click(function() { showView("loginView"); });
-    $("#showForgotPwd").click(function() { showView("forgotPwdView"); });
-      
-    window.addEventListener('hashchange', function() {
+    function hashHandler() {
         const hash = window.location.hash.slice(1).toLowerCase();
 
         if (hash == "createaccount") {
@@ -27,16 +25,16 @@ $(document).ready(function() {
         } else {
             showView("loginView");
         }
-    });
+    }
 
-    initViews();
-    showView(loginView);
+    // Event Listerners
+    window.addEventListener('hashchange', hashHandler);
 });
 
 
 
 // Init popup
-const popup = document.getElementById("popup");
+// const popup = document.getElementById("popup");
 
 // -----------------------------------
 
