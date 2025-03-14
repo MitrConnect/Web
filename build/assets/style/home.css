@@ -1,0 +1,81 @@
+/* Favorite Journal */
+
+#favJournalContainer .title {
+    display: block;
+    max-width: 30ch; /* Stops after 25 characters */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    /* Standard line-clamp with flexbox fallback */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 250px;
+    height: 50px;
+}
+
+#favJournalContainer .entry {
+    display: block;
+    max-width: 30ch; /* Stops after 25 characters */
+    max-height: 4.5em; /* Approximate height for 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    /* Standard line-clamp with flexbox fallback */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 275px;
+    height: 75px;
+}
+
+#favJournalContainer .date {
+    display: block;
+    max-width: 90%;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+#favJournalContainer .eachJournalContainer, #favJournalContainer .eachJournalContainer * {
+    cursor: pointer;
+}
+
+/* Recent Journal */
+#recentJournalContainer .title {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    /* Standard line-clamp with flexbox fallback */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 100%;
+}
+
+#recentJournalContainer .entry {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    /* Standard line-clamp with flexbox fallback */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 100%;
+}
+
+#recentJournalContainer .date {
+    display: block;
+    max-width: 95%;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+#recentJournalContainer .eachJournalContainer, #recentJournalContainer .eachJournalContainer * {
+    cursor: pointer;
+}

@@ -12,6 +12,7 @@ module.exports = {
     },
     entry: [
         './src/firebase/config.js',
+        './src/firebase/home.js',
         './src/firebase/auth.js',
         './src/objects/_auth.js',
         './src/firebase/screen_manager.js'

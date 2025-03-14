@@ -1,69 +1,42 @@
-<style>
-    .title {
-        display: block;
-        max-width: 30ch; /* Stops after 25 characters */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-break: break-word;
-
-        /* Standard line-clamp with flexbox fallback */
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-
-    .entry {
-        display: block;
-        max-width: 30ch; /* Stops after 25 characters */
-        max-height: 4.5em; /* Approximate height for 3 lines */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-break: break-word;
-
-        /* Standard line-clamp with flexbox fallback */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }
-</style>
-
 <div id="homeView" class="container px-1 p-4">
     <div class="row gap-3">
         <div class="col-12 d-flex gap-3">
             <!-- Left Div with overflow hidden -->
             <div class="col-9 d-flex flex-column gap-3 position-relative overflow-hidden">
-                <a href="#Add" class="col-12 p-4 bg-light text-dark rounded pe-auto">
-                    <label class="fs-5">Anything New?</label><br>
-                    <label class="fw-lighter">Write down your thoughts and feelings to understand them more clearly!</label>
+                <a href="#Add" class="col-12 p-4 bg-light text-dark rounded" style="cursor: pointer;">
+                    <label class="fs-5" style="cursor: pointer;">Anything New?</label><br>
+                    <label class="fw-lighter" style="cursor: pointer;">Write down your thoughts and feelings to understand them more clearly!</label>
                 </a>
 
                 <div class="col-12 d-flex mt-4 px-3 justify-content-between">
-                    <label>Favorite</label>
+                    <label>Favorites</label>
                     <label class="text-end text-muted" style="cursor: pointer;">Show All</label>
                 </div>
 
-                <!-- Single row with overflow clipped -->
                 <div class="col-12 position-relative overflow-hidden">
-                    <div class="d-flex flex-nowrap gap-3">
-                        <div class="p-1 bg-light rounded">
-                            <div class="title m-2">
-                                <!-- Journal Title Goes Here -->
-                            </div>
-                            <div class="entry text-muted m-2">
-                                <!-- Journal Entry Goes Here -->
-                            </div>
-                        </div> 
-                    </div>
+                    <div class="d-flex flex-nowrap gap-3" id="favJournalContainer"></div>
                 </div>
 
                 <div class="col-12 d-flex mt-4 px-3 justify-content-between">
-                    <label>Recent</label>
+                    <label>Recents</label>
                     <label class="text-end text-muted" style="cursor: pointer;">Show All</label>
                 </div>
+
+                <div class="col-12 d-flex overflow-hidden">
+                    <div class="gap-3" id="recentJournalContainer"></div>
+                </div>
+
             </div>
 
             <!-- Right Div -->
-            <div class="col-3 d-flex flex-column gap-3"></div>
+            <div class="col-3 d-flex flex-column gap-3">
+                <div class="p-5 bg-light"></div>
+                <div class="p-5 bg-light"></div>
+                <div class="p-5 bg-light"></div>
+                <div class="p-5 bg-light"></div>
+                <div class="p-5 bg-light"></div>
+                <div class="p-5 bg-light"></div>
+            </div>
         </div>
     </div>
 </div>
