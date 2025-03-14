@@ -1,10 +1,10 @@
 $(document).ready(function() {
     // Init Views
     $.when(
-        $.get(`Views/Home/ActivityView.html`, function(data) { $("#homeContainer").append(data); }),
-        $.get(`Views/Home/ChatView.html`, function(data) { $("#homeContainer").append(data); }),
+        $.get(`Views/Home/HomeView.html`, function(data) { $("#homeContainer").append(data); }),
         $.get(`Views/Home/ExploreView.html`, function(data) { $("#homeContainer").append(data); }),
-        $.get(`Views/Home/HomeView.html`, function(data) { $("#homeContainer").append(data); })
+        $.get(`Views/Home/ChatView.html`, function(data) { $("#homeContainer").append(data); }),
+        $.get(`Views/Home/ActivityView.html`, function(data) { $("#homeContainer").append(data); })
     ).then(function() {
         hashHandler();
     });
