@@ -125,4 +125,6 @@ if (getCurrentScreen() == "home") {
     journalEntries.forEach(journal => {
         document.getElementById("recentJournalContainer").appendChild(journalEntriesElements(journal));
     });
+
+    
 }
