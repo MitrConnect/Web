@@ -6,15 +6,35 @@ $(document).ready(function() {
         $.get(`Views/Home/ChatView.html`, function(data) { $("#homeContainer").append(data); }),
         $.get(`Views/Home/ActivityView.html`, function(data) { $("#homeContainer").append(data); })
     ).then(function() {
+        var navBar = document.getElementById('navigationBar');
+
+        navBar.querySelector("#logo").onclick = function(){
+            console.log("homeView");
+            showView("homeView");
+        }
+        navBar.querySelector("#home").onclick = function(){
+            console.log("homeView");
+            showView("homeView");
+        }
+        navBar.querySelector("#activity").onclick = function(){
+            console.log("activityView");
+            showView("activityView");
+        }
+        navBar.querySelector("#chat").onclick = function(){
+            console.log("chatView");
+            showView("chatView");
+        }
+        navBar.querySelector("#explore").onclick = function(){
+            console.log("exploreView");
+            showView("exploreView");
+        }
+
         hashHandler();
     });
 
     function showView(className){
-        $("#activityView").addClass("d-none");
-        $("#chatView").addClass("d-none");
-        $("#exploreView").addClass("d-none");
-        $("#homeView").addClass("d-none");
-        $(`#${className}`).removeClass("d-none");
+        $(".view").addClass("d-none"); // Hide all views
+        $("#" + className).removeClass("d-none"); // Show the selected view
     }
 
     function hashHandler() {
@@ -30,7 +50,4 @@ $(document).ready(function() {
             showView("homeView");
         }
     }
-
-    // Event Listerners
-    window.addEventListener('hashchange', hashHandler);
 });
