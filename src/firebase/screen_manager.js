@@ -42,6 +42,7 @@ export function isPathName(pathName){
 
 export function isHashName(hashName) {
   const cleanHashName = winLocation.hash.toLowerCase().slice(1);
+  console.log(cleanHashName);
   if (cleanHashName == hashName) {
     return true
   }

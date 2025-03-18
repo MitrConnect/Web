@@ -109,7 +109,7 @@ onDocReady(function() {
             `;
             dateDiv.appendChild(dateLabel);
             dateDiv.appendChild(svgLabel);
-        
+              
             // Append all created elements to the main journal div
             journalDiv.appendChild(titleDiv);
             journalDiv.appendChild(entryDiv);
@@ -118,11 +118,11 @@ onDocReady(function() {
             return journalDiv;
         }
     
-        journalEntries.forEach(journal => {
+        journalEntries.forEach((journal) => {
             document.getElementById("favJournalContainer").appendChild(journalEntriesElements(journal));
         });
         
-        journalEntries.forEach(journal => {
+        journalEntries.forEach((journal) => {
             document.getElementById("recentJournalContainer").appendChild(journalEntriesElements(journal));
         });
     }
