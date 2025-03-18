@@ -1,32 +1,27 @@
-// const express = require("express");
-
 import { auth } from "./config.js";
 import { onAuthStateChanged } from "firebase/auth";
 
-
+const prod = false;
 
 const winLocation = window.location;
-const winHash = winLocation.hash.slice(1).toLowerCase();
-
-const extension = "/build";
-// const extension = "";
+const winHash = winLocation.hash.toLowerCase().slice(1)
 
 const pathname = {
-  home: `${extension}/Home.html`,
-  auth: `${extension}/Auth.html`
+  home: `/${prod ? "" : "build/"}home.html`,
+  auth: `/${prod ? "" : "build/"}auth.html`
 }
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    if (winLocation.pathname == pathname.auth && winHash == "forgotpassword") {
+    if (isPathName("auth") && isHashName("forgotpassword")) {
       document.getElementById("showLogin2").parentElement.classList.add("d-none");
       window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
-    } else if (winLocation.pathname != pathname.home) {
+    } else if (!isPathName("home")) {
       window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
       // More Complex logic to be implement here!
     }
   } else {
-    if (winLocation.pathname != pathname.auth) {
+    if (!isPathName("auth")) {
       window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     }
   }
@@ -34,12 +29,31 @@ onAuthStateChanged(auth, (user) => {
   console.log(winLocation);
 });
 
-export function getCurrentScreen() {
-  return getKeyByValue(pathname, window.location.pathname)
-}
-
 
 // Helper Functions
-function getKeyByValue(object, value) {
-  return Object.keys(object).find(key => object[key] === value);
+export function isPathName(pathName){
+  const cleanPathName = winLocation.pathname.toLowerCase().split('/').pop().replace(".html","");
+  if (cleanPathName == pathName) {
+    return true
+  }
+
+  return false
+}
+
+export function isHashName(hashName) {
+  const cleanHashName = winLocation.hash.toLowerCase().slice(1);
+  if (cleanHashName == hashName) {
+    return true
+  }
+  return false
+}
+
+export function onDocReady(fn) {
+  // see if DOM is already available
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+      // call on next available tick
+      setTimeout(fn, 1);
+  } else {
+      document.addEventListener("DOMContentLoaded", fn);
+  }
 }

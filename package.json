@@ -1,5 +1,5 @@
 {
-  "name": "mitra-web",
+  "name": "mitr",
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/hello-mymitra/Mitra-Web#readme",
@@ -14,8 +14,7 @@
   "author": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",

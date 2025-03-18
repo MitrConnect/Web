@@ -1,9 +1,9 @@
 import { auth } from "./config.js";
-import { getCurrentScreen } from "./screen_manager.js"
+import { isPathName } from "./screen_manager.js"
 import { LoginUser, CreateUser, ForgotPassword, SignOut } from "../objects/_auth.js"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, validatePassword, signOut } from "firebase/auth";
 
-if (getCurrentScreen() == "auth") {
+if (isPathName("auth")) {
   // API Call for Logging in user
   LoginUser().submit.onclick = function() {
     let userInfo = LoginUser();
@@ -47,7 +47,7 @@ if (getCurrentScreen() == "auth") {
 
   }
   
-} else if (getCurrentScreen() == "home") {
+} else if (isPathName("home")) {
   // API Call for User to Sign Out
   SignOut().submit.onclick = function() {
     signOut(auth).then(() => {
