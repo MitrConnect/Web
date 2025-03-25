@@ -32,6 +32,10 @@
         cursor: pointer;
     }
 
+    .cursor-default {
+        cursor: default;
+    }
+
     .rounded-circle {
         margin-left: 10px;
         width: 50px;  /* Fixed width for circle */
@@ -110,11 +114,14 @@
                 <!-- Chat Messages -->
                 <div id="chat-messages" class="flex-grow-1 overflow-auto p-3 bg-light" style="height: 60vh;">
                     <!-- Received Message -->
+                    <div class="text-center my-3">
+                        <span class="text-muted px-3 py-2 cursor-default">Mar. 25</span>
+                    </div>
 
                     <!-- Text -->
                     <div class="d-flex align-items-start mb-3 cursor-pointer">
-                        <div class="p-3 bg-white shadow-sm rounded-3">
-                            <p class="mb-1 text-dark">Received message</p>
+                        <div class="p-3 bg-white shadow-sm rounded-3"  style="width: 80% !important;">
+                            <p class="mb-1 text-dark">Received message<br><br>Received messageReceived messageReceived messageReceived messageReceived messageReceived messageReceived messageReceived messageReceived messageReceived messageReceived message</p>
                         </div>
                     </div>
 
@@ -128,6 +135,10 @@
                     <!-- Img -->
                     <div class="d-flex align-items-start mb-3 cursor-pointer">
                         <img class="rounded-3 img-fluid" src="./assets/Icons/eg_img3.jpg" style="max-width: 400px; max-height: 400px; object-fit: cover;">
+                    </div>
+
+                    <div class="text-center my-3">
+                        <span class="text-muted px-3 py-2 cursor-default">Today</span>
                     </div>
 
                     <!-- Sent Message -->
