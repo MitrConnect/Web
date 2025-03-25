@@ -14,23 +14,23 @@
     <div class="col-1 d-flex justify-content-center">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" id="logo">Mitr</a>
+          <a class="nav-link logo">Mitr</a>
         </li>
       </ul>
     </div>
     <div class="col-10 d-flex justify-content-center gap-5">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" id="home">Home</a>
+          <a class="nav-link homeBtn">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Explore" id="explore">Explore</a>
+          <a class="nav-link exploreBtn">Explore</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Activity" id="activity">Activity</a>
+          <a class="nav-link activityBtn">Activity</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Chat" id="chat">Chat</a>
+          <a class="nav-link chatBtn">Chat</a>
         </li>
       </ul>
     </div>
@@ -88,16 +88,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!-- <script src="./assets/script/Home.js"></script> -->
- 
-<script> $(document).ready(function() { 
-  $.when( 
-    $.get(`Views/Home/ExploreView.html`, function(data) { 
-      $("#homeContainer").append(data); 
-    })
-  )
-});
-</script>
+
+<script> $(document).ready(function() { $.when( $.get(`Views/Home/ExploreView.html`, function(data) { $("#homeContainer").append(data); }))}); </script>
 <script> window.onload = () => document.body.appendChild(Object.assign(document.createElement("script"), { src: "./bundle/main.js" })); </script>
 
 </html>

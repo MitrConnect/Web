@@ -7,18 +7,22 @@ const winLocation = window.location;
 const winHash = winLocation.hash.toLowerCase().slice(1)
 
 const pathname = {
-  home: `/${prod ? "" : "build/"}home.html`,
-  auth: `/${prod ? "" : "build/"}auth.html`
+  auth: `/${prod ? "" : "build/"}auth${prod ? "" : ".html"}`,
+  home: `/${prod ? "" : "build/"}home${prod ? "" : ".html"}`,
+  explore: `/${prod ? "" : "build/"}explore${prod ? "" : ".html"}`,
+  activity: `/${prod ? "" : "build/"}activity${prod ? "" : ".html"}`,
+  chat: `/${prod ? "" : "build/"}chat${prod ? "" : ".html"}`
 }
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    if (isPathName("auth") && isHashName("forgotpassword")) {
-      document.getElementById("showLogin2").parentElement.classList.add("d-none");
-      window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
-    } else if (!isPathName("home")) {
-      window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
-      // More Complex logic to be implement here!
+    if (isPathName("auth")) {
+      if (isHashName("forgotpassword")) {
+        document.getElementById("showLogin2").parentElement.classList.add("d-none");
+        window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
+      } else {
+        window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
+      }
     }
   } else {
     if (!isPathName("auth")) {
@@ -57,4 +61,12 @@ export function onDocReady(fn) {
   } else {
       document.addEventListener("DOMContentLoaded", fn);
   }
+}
+
+export function getPathName(){
+  return winLocation.pathname.toLowerCase().split('/').pop().replace(".html","");
+}
+
+export function getHashName(){
+  return winLocation.hash.toLowerCase().slice(1);
 }
