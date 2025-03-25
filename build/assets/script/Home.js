@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    $.when(
+        $.get(`Views/Home/HomeView.html`, function(data) { $("#homeContainer").append(data); })
+    )
+});
+
+
+$(document).ready(function() {
     // Init Views
     $.when(
         $.get(`Views/Home/HomeView.html`, function(data) { $("#homeContainer").append(data); }),
