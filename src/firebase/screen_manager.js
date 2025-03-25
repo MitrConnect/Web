@@ -19,9 +19,9 @@ onAuthStateChanged(auth, (user) => {
     if (isPathName("auth")) {
       if (isHashName("forgotpassword")) {
         document.getElementById("showLogin2").parentElement.classList.add("d-none");
-        window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
+        replaceWindow(pathname.auth);
       } else {
-        window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
+        replaceWindow(pathname.home);
       }
     } else {
       navBarFunc();
@@ -29,7 +29,6 @@ onAuthStateChanged(auth, (user) => {
     }
   } else {
     if (!isPathName("auth")) {
-      window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     }
   }
   
@@ -40,19 +39,32 @@ function navBarFunc() {
   let navigationBar = document.getElementById("navigationBar");
   
   navigationBar.getElementsByClassName("logoBtn").item([0]).onclick = function() {
-    winLocation.pathname = pathname.home;
+    replaceWindow(pathname.home);
   }
   navigationBar.getElementsByClassName("homeBtn").item([0]).onclick = function() {
-    winLocation.pathname = pathname.home;
+    replaceWindow(pathname.home);
   }
   navigationBar.getElementsByClassName("exploreBtn").item([0]).onclick = function() {
-    winLocation.pathname = pathname.explore;
+    replaceWindow(pathname.explore);
   }
   navigationBar.getElementsByClassName("activityBtn").item([0]).onclick = function() {
-    winLocation.pathname = pathname.activity;
+    replaceWindow(pathname.activity);
   }
   navigationBar.getElementsByClassName("chatBtn").item([0]).onclick = function() {
-    winLocation.pathname = pathname.chat;
+    replaceWindow(pathname.chat);
+  }
+}
+
+
+export function replaceWindow(pathName, withHash = true, addToHistory = false){
+  if (addToHistory) {
+    winLocation.pathname = pathName;
+  } else {
+    if (withHash) {
+      window.location.replace(`${winLocation.origin}${pathName}#${winHash}`);
+    } else {
+      window.location.replace(`${winLocation.origin}${pathName}`);
+    }
   }
 }
 

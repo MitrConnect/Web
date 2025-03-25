@@ -1,4 +1,4 @@
-import { isPathName, onDocReady } from "./screen_manager.js";
+import { isPathName, onDocReady } from "./firebase/screen_manager.js";
 
 onDocReady(function() {
     if (isPathName("home")) {
