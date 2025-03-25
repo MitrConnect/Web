@@ -79,3 +79,7 @@
 #recentJournalContainer .eachJournalContainer, #recentJournalContainer .eachJournalContainer * {
     cursor: pointer;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

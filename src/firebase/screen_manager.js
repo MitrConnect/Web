@@ -22,35 +22,47 @@ onAuthStateChanged(auth, (user) => {
         window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
       } else {
         window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
+        navBarFunc();
       }
+    } else {
+      navBarFunc();
     }
   } else {
     if (!isPathName("auth")) {
       window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
     }
   }
-
+  
   console.log(winLocation);
 });
 
-
-// Helper Functions
-export function isPathName(pathName){
-  const cleanPathName = winLocation.pathname.toLowerCase().split('/').pop().replace(".html","");
-  if (cleanPathName == pathName) {
-    return true
+function navBarFunc() {
+  let navigationBar = document.getElementById("navigationBar");
+  
+  navigationBar.getElementsByClassName("logoBtn").item([0]).onclick = function() {
+    winLocation.pathname = pathname.home;
   }
+  navigationBar.getElementsByClassName("homeBtn").item([0]).onclick = function() {
+    winLocation.pathname = pathname.home;
+  }
+  navigationBar.getElementsByClassName("exploreBtn").item([0]).onclick = function() {
+    winLocation.pathname = pathname.explore;
+  }
+  navigationBar.getElementsByClassName("activityBtn").item([0]).onclick = function() {
+    winLocation.pathname = pathname.activity;
+  }
+  navigationBar.getElementsByClassName("chatBtn").item([0]).onclick = function() {
+    winLocation.pathname = pathname.chat;
+  }
+}
 
-  return false
+// Windows Helper Functions
+export function isPathName(pathName){
+  return (getPathName() == pathName);
 }
 
 export function isHashName(hashName) {
-  const cleanHashName = winLocation.hash.toLowerCase().slice(1);
-  console.log(cleanHashName);
-  if (cleanHashName == hashName) {
-    return true
-  }
-  return false
+  return (getHashName() == hashName);
 }
 
 export function onDocReady(fn) {
