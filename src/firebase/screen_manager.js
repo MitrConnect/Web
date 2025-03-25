@@ -22,10 +22,10 @@ onAuthStateChanged(auth, (user) => {
         window.location.replace(`${winLocation.origin}${pathname.auth}#${winHash}`);
       } else {
         window.location.replace(`${winLocation.origin}${pathname.home}#${winHash}`);
-        navBarFunc();
       }
     } else {
       navBarFunc();
+      // Complex logic goes here!
     }
   } else {
     if (!isPathName("auth")) {

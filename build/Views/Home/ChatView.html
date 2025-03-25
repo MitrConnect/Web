@@ -1,205 +1,86 @@
-<div class="container-fluid px-3 overflow-hidden" style="height: calc(100vh - 56px); display: flex; flex-direction: column;">
-    <div class="row flex-grow-1 h-100">
-        <!-- Users List -->
-        <div class="col-md-4 col-lg-3 border-end p-3 d-flex flex-column gap-4">
-            <h5 class="fw-bold px-2">Chats</h5>
-            <div class="container">
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
+<style>
+    .scroll {
+        height: 75vh; /* Adjust height as needed */
+        overflow-y: auto;
+        scrollbar-width: thin; /* For Firefox */
+        scrollbar-color: #888 #f1f1f1; /* Customize scrollbar color */
+    }
+
+    .scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px;
+    }
+
+    .scroll::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .hover-effect {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .hover-effect:hover {
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .rounded-circle {
+        margin-left: 10px;
+        width: 50px;  /* Fixed width for circle */
+        height: 50px; /* Fixed height for circle */
+        object-fit: cover; /* Ensures the image covers the circle */
+        border-radius: 50%; /* Makes it circular */
+    }
+</style>
+
+<div class="row gap-3">
+    <div class="col-12 d-flex gap-3">
+        <!-- Left Side -->
+        <div class="col-3 d-flex flex-column gap-3 position-relative overflow-hidden">
+            <!-- Chats -->
+            <div class="card w-100 border-0 bg-light hover-effect rounded-4">
+                <div class="card-body bg-light rounded-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title fw-semibold mt-2">Chats</h5>
+                    </div>
                 </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
+                
+                <ul class="list-group list-group-flush scroll">
+                    <!-- List items go here -->
+                    <li class="list-group-item bg-light border-bottom cursor-pointer">
+                        <div class="d-flex align-items-center gap-3 ">
+                            <img class="rounded-circle" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="d-flex flex-column mt-3">
+                                <span class="text-dark">Stavan Gandhi</span>
+                                <p class="text-muted"></p>
+                            </div>
                         </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
+                    </li>
+                    <li class="list-group-item bg-light border-bottom cursor-pointer">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="rounded-circle" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="d-flex flex-column mt-3">
+                                <span class="text-dark">Stavan Gandhi</span>
+                                <p class="text-muted">Last message preview...</p>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="list-group overflow-auto">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded">
-                        <div class="rounded-circle bg-light p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>User Name</strong>
-                            <p class="text-muted small m-0">Last message preview...</p>
-                        </div>
-                    </a>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <!-- Chat Area -->
-        <div class="col-md-8 col-lg-9 d-flex flex-column p-3">
-            <!-- Messages Container -->
-            <div id="messagesContainer" class="flex-grow-1 overflow-auto p-3 border rounded mt-3" style="background-color: #f8f9fa;">
-                <div class="d-flex mb-3">
-                    <div class="p-2 rounded bg-primary text-white" style="max-width: 60%;">
-                        <p class="m-0">Hello! How are you?</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-end mb-3">
-                    <div class="p-2 rounded bg-light border" style="max-width: 60%;">
-                        <p class="m-0">I'm doing great! How about you?</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Message Input -->
-            <form id="chatForm" class="d-flex align-items-center border-top pt-2 mt-3">
-                <input type="text" id="messageInput" class="form-control me-2" placeholder="Type a message...">
-                <button type="submit" class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
-                        <path d="M15.964 1.896a.5.5 0 0 0-.57-.126L1.185 7.385a.5.5 0 0 0 .073.933l5.6 1.692 1.692 5.6a.5.5 0 0 0 .933.073l5.615-14.209a.5.5 0 0 0-.134-.57zM6.846 8.568L2.5 7.185l11.509-5.748L6.846 8.568zm.64.64l6.33-6.33-5.749 11.509-1.693-5.6z"/>
-                    </svg>
-                </button>
-            </form>
+        <!-- Right Div -->
+        <div class="col-9 d-flex flex-column gap-3">
+            <!-- Other content for the right side -->
         </div>
     </div>
 </div>
+

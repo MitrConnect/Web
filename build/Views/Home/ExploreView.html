@@ -18,239 +18,282 @@
     .scroll::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+
+    .hover-effect {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .hover-effect:hover {
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .rounded-circle {
+        margin-left: 10px;
+        width: 50px;  /* Fixed width for circle */
+        height: 50px; /* Fixed height for circle */
+        object-fit: cover; /* Ensures the image covers the circle */
+        border-radius: 50%; /* Makes it circular */
+    }
 </style>
 
-<div class="view container px-1 p-4">
-    <div class="row gap-3">
-        <div class="col-12 d-flex gap-3">
-            <!-- Left Side -->
-            <div class="col-9 d-flex container flex-column gap-3 position-relative overflow-hidden">
-                <!-- Main Journal -->
-                <div class="card text-white position-relative w-100 h-50 overflow-hidden rounded-4 hover-effect">
-                    <img src="./assets/Icons/eg_img2.jpg" class="card-img h-100 object-fit-cover" alt="Card image cap">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50">
-                        <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
-                        <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
-                        <p class="card-text small text-light opacity-75">
-                            Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of artificial skin on the mannequin face. It's still in the early stages, but the texture and flexibility seem promising...
-                        </p>
+<div class="row gap-3">
+    <div class="col-12 d-flex gap-3">
+        <!-- Left Side -->
+        <div class="col-9 d-flex container flex-column gap-3 position-relative overflow-hidden">
+            <!-- Main Journal -->
+            <div class="card text-white position-relative w-100 h-50 overflow-hidden rounded-4 hover-effect">
+                <img src="./assets/Icons/eg_img2.jpg" class="card-img h-100 object-fit-cover" alt="Card image cap">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50">
+                    <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
+                    <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
+                    <p class="card-text small text-light opacity-75">
+                        Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of artificial skin on the mannequin face. It's still in the early stages, but the texture and flexibility seem promising...
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-light small d-flex align-items-center gap-2 flex-wrap">
+                            <a href="#@Stavangandhi3008" class="text-decoration-none text-light fw-semibold">@Stavangandhi3008</a>
+                            <span>•</span>
+                            <span>12 min</span>
+                            <span>•</span>
+                            <span>Mar 21, 2024</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3 fw-semibold">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bunch of small Journals -->
+            <div class="container">
+                <div class="row g-4 my-1">
+                    <div class="col-3 col-md-6 d-flex h-25">
+                        <div class="card w-100 border-0 rounded-4 hover-effect">
+                            <img class="card-img-top rounded-top-4" style="height: 30vh;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
+                                <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
+                                <p class="card-text small text-muted opacity-75">
+                                    Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="text-dark small d-flex align-items-center gap-2 flex-wrap">
+                                        <a href="#@Stavangandhi3008" class="text-decoration-none text-dark fw-semibold">@Stavangandhi3008</a>
+                                        <span>•</span>
+                                        <span>12 min</span>
+                                        <span>•</span>
+                                        <span>Mar 21, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-6 d-flex h-25">
+                        <div class="card w-100 border-0 rounded-4 hover-effect">
+                            <img class="card-img-top rounded-top-4" style="height: 30vh;" src="./assets/Icons/eg_img3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
+                                <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
+                                <p class="card-text small text-muted opacity-75">
+                                    Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="text-dark small d-flex align-items-center gap-2 flex-wrap">
+                                        <a href="#@Stavangandhi3008" class="text-decoration-none text-dark fw-semibold">@Stavangandhi3008</a>
+                                        <span>•</span>
+                                        <span>12 min</span>
+                                        <span>•</span>
+                                        <span>Mar 21, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-6 d-flex h-25">
+                        <div class="card w-100 border-0 rounded-4 hover-effect">
+                            <img class="card-img-top rounded-top-4" style="height: 30vh;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
+                                <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
+                                <p class="card-text small text-muted opacity-75">
+                                    Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="text-dark small d-flex align-items-center gap-2 flex-wrap">
+                                        <a href="#@Stavangandhi3008" class="text-decoration-none text-dark fw-semibold">@Stavangandhi3008</a>
+                                        <span>•</span>
+                                        <span>12 min</span>
+                                        <span>•</span>
+                                        <span>Mar 21, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-6 d-flex h-25">
+                        <div class="card w-100 border-0 rounded-4 hover-effect">
+                            <img class="card-img-top rounded-top-4" style="height: 30vh;" src="./assets/Icons/eg_img3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
+                                <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
+                                <p class="card-text small text-muted opacity-75">
+                                    Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="text-dark small d-flex align-items-center gap-2 flex-wrap">
+                                        <a href="#@Stavangandhi3008" class="text-decoration-none text-dark fw-semibold">@Stavangandhi3008</a>
+                                        <span>•</span>
+                                        <span>12 min</span>
+                                        <span>•</span>
+                                        <span>Mar 21, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>         
+
+        <!-- Right Div -->
+        <div class="col-3 d-flex flex-column gap-3">
+            
+            <!-- Subscribe to Premium -->
+            <div class="col-12 w-100 d-flex">
+                <div class="card w-100 border-0 bg-light hover-effect rounded-4">
+                    <div class="card-body bg-light rounded-4">
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="text-light small d-flex align-items-center gap-2 flex-wrap">
-                                <a href="#@Stavangandhi3008" class="text-decoration-none text-light fw-semibold">@Stavangandhi3008</a>
-                                <span>•</span>
-                                <span>12 min</span>
-                                <span>•</span>
-                                <span>Mar 21, 2024</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3 fw-semibold">Read More</a>
+                            <h5 class="card-title fw-semibold mt-2">Subscribe to Premium</h5>
+                        </div>
+                        <p class="text-muted small">Subscribe to unlock new features and, if eligible, receive a share of ad revenue.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill">Subscribe</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Bunch of small Journals -->
-                <div class="container">
-                    <div class="row g-4 my-1">
-                        <div class="col-12 col-md-6 d-flex h-25">
-                            <div class="card w-100 border-0 rounded-4 hover-effect">
-                                <img class="card-img-top rounded-top-4" style="height: 30vh;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                <div class="card-body">
+            <!-- Trending Nearby -->
+            <div class="col-12 w-100 d-flex">
+                <div class="card w-100 border-0 bg-light hover-effect rounded-4">
+                    <div class="card-body bg-light rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title fw-semibold mt-2">Trending Nearby</h5>
+                        </div>
+                    </div>
+                    
+                    <ul class="list-group list-group-flush scroll">
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
                                     <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
-                                    <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
-                                    <p class="card-text small text-muted opacity-75">
-                                        Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of...
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="text-dark small d-flex align-items-center gap-2 flex-wrap">
-                                            <a href="#@Stavangandhi3008" class="text-decoration-none text-dark fw-semibold">@Stavangandhi3008</a>
-                                            <span>•</span>
-                                            <span>12 min</span>
-                                            <span>•</span>
-                                            <span>Mar 21, 2024</span>
-                                        </div>
-                                    </div>
+                                    <p class="m-0 text-dark fw-semibold small">Progress on Humanoid Robot Development</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex h-25">
-                            <div class="card w-100 border-0 rounded-4 hover-effect">
-                                <img class="card-img-top rounded-top-4" style="height: 30vh;" src="./assets/Icons/eg_img3.jpg" alt="Card image cap">
-                                <div class="card-body">
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img2.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="badge bg-primary text-white text-uppercase fw-bold px-2 py-1 align-self-start">Sports</span>
+                                    <p class="m-0 text-dark fw-semibold small">AI Video Call Avatar Integration</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
                                     <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
-                                    <h5 class="card-title fw-semibold mt-2">Progress on Humanoid Robot Development</h5>
-                                    <p class="card-text small text-muted opacity-75">
-                                        Today, I focused on improving the humanoid robot's facial features. I successfully applied the first layer of...
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="text-dark small d-flex align-items-center gap-2 flex-wrap">
-                                            <a href="#@Stavangandhi3008" class="text-decoration-none text-dark fw-semibold">@Stavangandhi3008</a>
-                                            <span>•</span>
-                                            <span>12 min</span>
-                                            <span>•</span>
-                                            <span>Mar 21, 2024</span>
-                                        </div>
-                                    </div>
+                                    <p class="m-0 text-dark fw-semibold small">Progress on Humanoid Robot Development</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img2.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="badge bg-primary text-white text-uppercase fw-bold px-2 py-1 align-self-start">Sports</span>
+                                    <p class="m-0 text-dark fw-semibold small">AI Video Call Avatar Integration</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>         
+            </div>
 
-            <!-- Right Div -->
-            <div class="col-3 d-flex flex-column gap-3">
-                
-                <!-- Subscribe to Premium -->
-                <div class="col-12 w-100 d-flex">
-                    <div class="card w-100 border-0 bg-light hover-effect rounded-4">
-                        <div class="card-body bg-light rounded-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title fw-semibold mt-2">Subscribe to Premium</h5>
-                            </div>
-                            <p class="text-muted small">Subscribe to unlock new features and, if eligible, receive a share of ad revenue.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill">Subscribe</a>
-                            </div>
+            <!-- Advertisement (Template) -->
+            <div class="p-2 px-4 bg-light rounded-4 hover-effect">
+                <div class="text-end">
+                    x
+                </div>
+                <div class="p-5 text-center">
+                    Advertise
+                </div>
+            </div>
+            
+            <!-- Who To Follow -->
+            <div class="col-12 w-100 d-flex">
+                <div class="card w-100 border-0 bg-light hover-effect rounded-4">
+                    <div class="card-body bg-light rounded-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title fw-semibold mt-2">Who to follow</h5>
                         </div>
                     </div>
-                </div>
-
-                <!-- Trending Nearby -->
-                <div class="col-12 w-100 d-flex">
-                    <div class="card w-100 border-0 bg-light hover-effect rounded-4">
-                        <div class="card-body bg-light rounded-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title fw-semibold mt-2">Trending Nearby</h5>
+                    
+                    <ul class="list-group list-group-flush scroll">
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-circle" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
+                                    <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <ul class="list-group list-group-flush scroll">
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
-                                        <p class="m-0 text-dark fw-semibold small">Progress on Humanoid Robot Development</p>
-                                    </div>
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-circle" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
+                                    <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
                                 </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img2.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="badge bg-primary text-white text-uppercase fw-bold px-2 py-1 align-self-start">Sports</span>
-                                        <p class="m-0 text-dark fw-semibold small">AI Video Call Avatar Integration</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 align-self-start">Tech</span>
-                                        <p class="m-0 text-dark fw-semibold small">Progress on Humanoid Robot Development</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img2.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="badge bg-primary text-white text-uppercase fw-bold px-2 py-1 align-self-start">Sports</span>
-                                        <p class="m-0 text-dark fw-semibold small">AI Video Call Avatar Integration</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Advertisement (Template) -->
-                <div class="p-2 px-4 bg-light rounded-4 hover-effect">
-                    <div class="text-end">
-                        x
-                    </div>
-                    <div class="p-5 text-center">
-                        Advertise
-                    </div>
-                </div>
-                
-                <!-- Who To Follow -->
-                <div class="col-12 w-100 d-flex">
-                    <div class="card w-100 border-0 bg-light hover-effect rounded-4">
-                        <div class="card-body bg-light rounded-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title fw-semibold mt-2">Who to follow</h5>
                             </div>
-                        </div>
-                        
-                        <ul class="list-group list-group-flush scroll">
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
-                                        <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
-                                    </div>
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-circle" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
+                                    <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
                                 </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
-                                        <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
-                                    </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-circle" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
+                                    <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
                                 </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
-                                        <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
-                                    </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-light rounded-4 cursor-pointer">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="rounded-circle" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                                <div class="d-flex flex-column">
+                                    <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
+                                    <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
                                 </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
-                                        <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-light rounded-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <img class="rounded-2 w-25 h-25" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
-                                    <div class="d-flex flex-column">
-                                        <span class="text-dark fw-bold align-self-start">Stavan Gandhi</span>
-                                        <p class="m-0 text-muted fw-semibold small">@stavangandhi3008</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    document.querySelectorAll(".hover-effect").forEach((element) => {
-        element.onmouseover = function () {
-            element.classList.remove("shadow-sm");
-            element.classList.add("shadow");
-            element.style.transition = "all 0.5s ease"; // Add smooth transition
-        };
-        element.onmouseleave = function () {
-            element.classList.remove("shadow");
-            element.classList.add("shadow-sm");
-            element.style.transition = "all 0.5s ease"; // Add smooth transition
-        };
-
-        element.classList.add("shadow-sm");
-        element.style.cursor = "pointer";
-    });
-</script>
