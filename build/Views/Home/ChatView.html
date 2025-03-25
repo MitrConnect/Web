@@ -55,12 +55,39 @@
                 
                 <ul class="list-group list-group-flush scroll">
                     <!-- List items go here -->
-                    <li class="list-group-item bg-light border-bottom cursor-pointer">
-                        <div class="d-flex align-items-center gap-3 ">
+                    <li class="list-group-item bg-body-secondary border-bottom cursor-pointer">
+                        <div class="d-flex align-items-center gap-3">
                             <img class="rounded-circle" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
                             <div class="d-flex flex-column mt-3">
                                 <span class="text-dark">Stavan Gandhi</span>
-                                <p class="text-muted"></p>
+                                <p class="text-muted">Active 3h ago</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-light border-bottom cursor-pointer">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="rounded-circle" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="d-flex flex-column mt-3">
+                                <span class="text-dark">Stavan Gandhi</span>
+                                <p class="text-muted">Last message preview...</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-light border-bottom cursor-pointer">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="rounded-circle" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="d-flex flex-column mt-3">
+                                <span class="text-dark">Stavan Gandhi</span>
+                                <p class="text-muted">Last message preview...</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-light border-bottom cursor-pointer">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="rounded-circle" style="object-fit: cover;" src="./assets/Icons/eg_img1.jpg" alt="Card image cap">
+                            <div class="d-flex flex-column mt-3">
+                                <span class="text-dark">Stavan Gandhi</span>
+                                <p class="text-muted">Last message preview...</p>
                             </div>
                         </div>
                     </li>
@@ -78,9 +105,47 @@
         </div>
 
         <!-- Right Div -->
-        <div class="col-9 d-flex flex-column gap-3">
-            <!-- Other content for the right side -->
+        <div class="col-md-9 d-flex flex-column gap-3">
+            <div class="card w-100 border-0 shadow-sm rounded-4 d-flex flex-column" style="height: 84vh;">
+                <!-- Chat Messages -->
+                <div id="chat-messages" class="flex-grow-1 overflow-auto p-3 bg-light" style="height: 60vh;">
+                    <!-- Received Message -->
+
+                    <!-- Text -->
+                    <div class="d-flex align-items-start mb-3 cursor-pointer">
+                        <div class="p-3 bg-white shadow-sm rounded-3">
+                            <p class="mb-1 text-dark">Received message</p>
+                        </div>
+                    </div>
+
+                    <!-- Link -->
+                    <div class="d-flex align-items-start mb-3 cursor-pointer">
+                        <div class="p-3 bg-white shadow-sm rounded-3">
+                            <a class="text-primary text-decoration-none">https://google.com/</a>
+                        </div>
+                    </div>
+
+                    <!-- Img -->
+                    <div class="d-flex align-items-start mb-3 cursor-pointer">
+                        <img class="rounded-3 img-fluid" src="./assets/Icons/eg_img3.jpg" style="max-width: 400px; max-height: 400px; object-fit: cover;">
+                    </div>
+
+                    <!-- Sent Message -->
+                    <div class="d-flex flex-row-reverse mb-3 cursor-pointer">
+                        <div class="p-3 bg-primary shadow-sm rounded-3">
+                            <p class="mb-1 text-white">Sent message</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="card-footer bg-white border-top p-2">
+                    <div class="input-group">
+                        <input type="text" id="messageInput" class="form-control rounded-pill" placeholder="Type a message...">
+                        <button class="btn btn-primary rounded-pill ms-2">Send</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
