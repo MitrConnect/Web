@@ -24,8 +24,11 @@ onAuthStateChanged(auth, (user) => {
         replaceWindow(pathname.home);
       }
     } else {
-      navBarFunc();
-      // Complex logic goes here!
+      onDocReady(function() {
+        navBarFunc();
+        // Complex logic goes here!
+
+      });
     }
   } else {
     if (!isPathName("auth")) {
@@ -38,23 +41,44 @@ onAuthStateChanged(auth, (user) => {
 function navBarFunc() {
   let navigationBar = document.getElementById("navigationBar");
   
-  navigationBar.getElementsByClassName("logoBtn").item([0]).onclick = function() {
+  navigationBar.getElementsByClassName("logoBtn")[0].onclick = function() {
+    console.log("logoBtn Pressed!");
     replaceWindow(pathname.home);
   }
-  navigationBar.getElementsByClassName("homeBtn").item([0]).onclick = function() {
+  navigationBar.getElementsByClassName("homeBtn")[0].onclick = function() {
+    console.log("exploreBtn Pressed!");
     replaceWindow(pathname.home);
   }
-  navigationBar.getElementsByClassName("exploreBtn").item([0]).onclick = function() {
+  navigationBar.getElementsByClassName("exploreBtn")[0].onclick = function() {
+    console.log("exploreBtn Pressed!");
     replaceWindow(pathname.explore);
   }
-  navigationBar.getElementsByClassName("activityBtn").item([0]).onclick = function() {
+  navigationBar.getElementsByClassName("activityBtn")[0].onclick = function() {
+    console.log("activityBtn Pressed!");
     replaceWindow(pathname.activity);
   }
-  navigationBar.getElementsByClassName("chatBtn").item([0]).onclick = function() {
+  navigationBar.getElementsByClassName("chatBtn")[0].onclick = function() {
+    console.log("chatBtn Pressed!");
     replaceWindow(pathname.chat);
   }
 }
 
+// Windows Helper Functions
+export function isPathName(pathName){
+  return (getPathName() == pathName);
+}
+
+export function isHashName(hashName) {
+  return (getHashName() == hashName);
+}
+
+export function getPathName(){
+  return winLocation.pathname.toLowerCase().split('/').pop().replace(".html","");
+}
+
+export function getHashName(){
+  return winLocation.hash.toLowerCase().slice(1);
+}
 
 export function replaceWindow(pathName, withHash = true, addToHistory = false){
   if (addToHistory) {
@@ -68,15 +92,6 @@ export function replaceWindow(pathName, withHash = true, addToHistory = false){
   }
 }
 
-// Windows Helper Functions
-export function isPathName(pathName){
-  return (getPathName() == pathName);
-}
-
-export function isHashName(hashName) {
-  return (getHashName() == hashName);
-}
-
 export function onDocReady(fn) {
   // see if DOM is already available
   if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -85,12 +100,4 @@ export function onDocReady(fn) {
   } else {
       document.addEventListener("DOMContentLoaded", fn);
   }
-}
-
-export function getPathName(){
-  return winLocation.pathname.toLowerCase().split('/').pop().replace(".html","");
-}
-
-export function getHashName(){
-  return winLocation.hash.toLowerCase().slice(1);
 }

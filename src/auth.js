@@ -1,6 +1,6 @@
-import { auth } from "./config.js";
-import { isPathName } from "./screen_manager.js"
-import { LoginUser, CreateUser, ForgotPassword, SignOut } from "../objects/_auth.js"
+import { auth } from "./firebase/config.js";
+import { isPathName } from "./firebase/screen_manager.js"
+import { LoginUser, CreateUser, ForgotPassword, SignOut } from "./objects/_auth.js"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, validatePassword, signOut } from "firebase/auth";
 
 if (isPathName("auth")) {
