@@ -11,7 +11,8 @@ const pathname = {
   profile: `/${prod ? "" : "build/"}profile${prod ? "" : ".html"}`,
   explore: `/${prod ? "" : "build/"}explore${prod ? "" : ".html"}`,
   activity: `/${prod ? "" : "build/"}activity${prod ? "" : ".html"}`,
-  chat: `/${prod ? "" : "build/"}chat${prod ? "" : ".html"}`
+  chat: `/${prod ? "" : "build/"}chat${prod ? "" : ".html"}`,
+  journal: `/${prod ? "" : "build/"}journal${prod ? "" : ".html"}`,
 }
 
 onAuthStateChanged(auth, (user) => {
@@ -61,6 +62,11 @@ function navBarFunc() {
   navigationBar.getElementsByClassName("profileBtn")[0].onclick = function() {
     console.log("profileBtn Pressed!");
     replaceWindow(pathname.profile);
+  }
+
+  navigationBar.getElementsByClassName("journalBtn")[0].onclick = function() {
+    console.log("journalBtn Pressed!");
+    replaceWindow(pathname.journal);
   }
 }
 
