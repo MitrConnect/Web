@@ -23,11 +23,14 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle/main.js',
+        filename: './bundle/main.js',
     },
     devtool: 'eval-source-map',
     watch: true,
     devServer: {
         allowedHosts: 'all',
-    }
+    },
+    optimization: {
+        minimize: false, // Disable minification for testing
+    },
 };

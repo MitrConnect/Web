@@ -49,13 +49,13 @@ if (isPathName("auth")) {
   
 } else if (!isPathName("auth")) {
   // API Call for User to Sign Out
-  SignOut().submit.onclick = function() {
-    signOut(auth).then(() => {
-      console.log("Sign-out successful");
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode + ": " + errorMessage);
-    });
-  }
+  // SignOut().submit.onclick = function() {
+  //   signOut(auth).then(() => {
+  //     console.log("Sign-out successful");
+  //   }).catch((error) => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     console.log(errorCode + ": " + errorMessage);
+  //   });
+  // }
 }
