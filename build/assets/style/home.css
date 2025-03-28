@@ -26,3 +26,11 @@
 .slideOut {
     animation: slide_Out 0.5s ease-in forwards;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
