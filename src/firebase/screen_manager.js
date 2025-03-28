@@ -8,7 +8,7 @@ const winHash = winLocation.hash.toLowerCase().slice(1)
 
 const pathname = {
   auth: `/${prod ? "" : "build/"}auth${prod ? "" : ".html"}`,
-  home: `/${prod ? "" : "build/"}home${prod ? "" : ".html"}`,
+  profile: `/${prod ? "" : "build/"}profile${prod ? "" : ".html"}`,
   explore: `/${prod ? "" : "build/"}explore${prod ? "" : ".html"}`,
   activity: `/${prod ? "" : "build/"}activity${prod ? "" : ".html"}`,
   chat: `/${prod ? "" : "build/"}chat${prod ? "" : ".html"}`
@@ -21,7 +21,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById("showLogin2").parentElement.classList.add("d-none");
         replaceWindow(pathname.auth);
       } else {
-        replaceWindow(pathname.home);
+        replaceWindow(pathname.explore);
       }
     } else {
       onDocReady(function() {
@@ -43,11 +43,7 @@ function navBarFunc() {
   
   navigationBar.getElementsByClassName("logoBtn")[0].onclick = function() {
     console.log("logoBtn Pressed!");
-    replaceWindow(pathname.home);
-  }
-  navigationBar.getElementsByClassName("homeBtn")[0].onclick = function() {
-    console.log("exploreBtn Pressed!");
-    replaceWindow(pathname.home);
+    replaceWindow(pathname.explore);
   }
   navigationBar.getElementsByClassName("exploreBtn")[0].onclick = function() {
     console.log("exploreBtn Pressed!");
@@ -60,6 +56,11 @@ function navBarFunc() {
   navigationBar.getElementsByClassName("chatBtn")[0].onclick = function() {
     console.log("chatBtn Pressed!");
     replaceWindow(pathname.chat);
+  }
+  
+  navigationBar.getElementsByClassName("profileBtn")[0].onclick = function() {
+    console.log("profileBtn Pressed!");
+    replaceWindow(pathname.profile);
   }
 }
 

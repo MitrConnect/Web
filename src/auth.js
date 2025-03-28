@@ -47,7 +47,7 @@ if (isPathName("auth")) {
 
   }
   
-} else if (isPathName("home")) {
+} else if (!isPathName("auth")) {
   // API Call for User to Sign Out
   SignOut().submit.onclick = function() {
     signOut(auth).then(() => {

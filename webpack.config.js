@@ -14,7 +14,7 @@ module.exports = {
         './src/firebase/config.js',
         './src/firebase/screen_manager.js',
         './src/auth.js',
-        './src/home.js',
+        './src/profile.js',
         './src/explore.js',
         './src/activity.js',
         './src/chat.js',

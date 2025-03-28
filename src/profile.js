@@ -1,7 +1,7 @@
 import { isPathName, onDocReady } from "./firebase/screen_manager.js";
 
 onDocReady(function() {
-    if (isPathName("home")) {
+    if (isPathName("profile")) {
         const journalEntries = [
             {
                 title: "Progress on Humanoid Robot Development",
