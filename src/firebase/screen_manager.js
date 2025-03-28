@@ -33,6 +33,7 @@ onAuthStateChanged(auth, (user) => {
     }
   } else {
     if (!isPathName("auth")) {
+      replaceWindow(pathname.auth, false);
     }
   }
   

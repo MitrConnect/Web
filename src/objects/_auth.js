@@ -30,7 +30,13 @@ export const ForgotPassword = function() {
 }
 
 export const SignOut = function() {
+    const view = document.getElementById("signOutConfirmView");
+
     return {
-        submit: document.getElementById("signOutBtn")
+        showConfirmation : document.getElementById("signOutBtn"),
+        view: view,
+        submit: view.getElementsByClassName("btn-danger")[0],
+        cancel: view.getElementsByClassName("btn-secondary")[0],
+        text: view.getElementsByTagName("a")[0]
     }
 }
