@@ -1,4 +1,5 @@
 import { auth } from "./config.js";
+import * as rtdb from "./RTDB.js"
 import { onAuthStateChanged } from "firebase/auth";
 import { getAllPathNames, isPathName, isHashName, replaceWindow, onDocReady } from "../objects/_window.js";
 
@@ -17,8 +18,20 @@ onAuthStateChanged(auth, (user) => {
     } else {
       onDocReady(function() {
         navBarFunc();
-        // Complex logic goes here!
 
+        // Complex logic goes here!
+        rtdb.WRITE(`users/${user.uid}/`, {
+          "Name": user.displayName,
+          "Email": user.email
+        })
+        rtdb.READ(`users/${user.uid}/`)
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              console.log(snapshot.val());
+            } else {
+              console.log("No data available");
+            }
+          });
       });
     }
   } else {
