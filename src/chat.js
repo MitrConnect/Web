@@ -36,48 +36,49 @@ function msgUI(){
     }, 100);
 }
 
-function usersUI(){
-    let lastClickedButton = null;
+// function usersUI(){
+//     let lastClickedButton = null;
 
-    const userList = document.getElementById("userList");
-    const spinner = SpinnerUI();
+//     const userList = document.getElementById("userList");
+//     const spinner = SpinnerUI();
 
-    userList.appendChild(userListUI("Mitr", "./assets/Icons/eg_img1.jpg", "Active now"));
+//     userList.appendChild(userListUI("Mitr", "./assets/Icons/eg_img1.jpg", "Active now"));
 
-    document.querySelectorAll(".list-group-item").forEach(button => {
-        button.addEventListener("click", function () {
-            // Revert previous button if any
-            if (lastClickedButton) {
-                lastClickedButton.classList.remove("bg-body-secondary");
-                lastClickedButton.classList.add("bg-light");
-            }
+//     document.querySelectorAll(".list-group-item").forEach(button => {
+//         button.addEventListener("click", function () {
+//             // Revert previous button if any
+//             if (lastClickedButton) {
+//                 lastClickedButton.classList.remove("bg-body-secondary");
+//                 lastClickedButton.classList.add("bg-light");
+//             }
 
-            // Change background of clicked button
-            this.classList.remove("bg-light");
-            this.classList.add("bg-body-secondary");
+//             // Change background of clicked button
+//             this.classList.remove("bg-light");
+//             this.classList.add("bg-body-secondary");
 
-            // Update last clicked button
-            lastClickedButton = this;
+//             // Update last clicked button
+//             lastClickedButton = this;
 
-            msgUI();
-        });
-    });
+//             msgUI();
+//         });
+//     });
 
-    setTimeout(() => {
-        userList.onscroll = function() {
-            const scrolledPercentage = (((userList.scrollTop + userList.clientHeight) / userList.scrollHeight) * 100);
-            if (scrolledPercentage > 97) {
-                userList.prepend(spinner);
-                // Recently loaded Old Users goes here
-            }
-            console.log(scrolledPercentage);
-        };
+//     setTimeout(() => {
+//         userList.onscroll = function() {
+//             const scrolledPercentage = (((userList.scrollTop + userList.clientHeight) / userList.scrollHeight) * 100);
+//             if (scrolledPercentage > 97) {
+//                 userList.prepend(spinner);
+//                 // Recently loaded Old Users goes here
+//             }
+//             console.log(scrolledPercentage);
+//         };
 
-    }, 100);
-}
+//     }, 100);
+// }
 
 onDocReady(function() {
     if (isPathName("chat")) {
-        usersUI();
+        // usersUI();
+        msgUI();
     }
 });

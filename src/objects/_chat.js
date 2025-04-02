@@ -20,7 +20,7 @@ export const received = function(type, data) {
     const div = document.createElement("div");
 
     if (type == "link") {
-        div.className = "p-3 bg-white shadow-sm rounded-3 cursor-pointer";
+        div.className = "p-3 bg-white rounded-3 cursor-pointer";
         div.style = "max-width: 80% !important;";
 
         const a = document.createElement("a");
@@ -36,7 +36,7 @@ export const received = function(type, data) {
 
         div.appendChild(img);
     } else {
-        div.className = "p-3 bg-white shadow-sm rounded-3 cursor-pointer";
+        div.className = "p-3 bg-white rounded-3 cursor-pointer";
         div.style = "max-width: 80% !important;";
 
         const p = document.createElement("p");
