@@ -1,4 +1,4 @@
-import { isPathName, onDocReady } from "./firebase/screen_manager.js";
+import { isPathName, onDocReady } from "./objects/_window.js";
 
 onDocReady(function() {
     if (isPathName("activity")) {

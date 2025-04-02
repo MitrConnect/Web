@@ -1,19 +1,9 @@
 import { auth } from "./config.js";
 import { onAuthStateChanged } from "firebase/auth";
+import { getAllPathNames, isPathName, isHashName, replaceWindow, onDocReady } from "../objects/_window.js";
 
 const prod = false;
-
-const winLocation = window.location;
-const winHash = winLocation.hash.toLowerCase().slice(1)
-
-const pathname = {
-  auth: `/${prod ? "" : "build/"}auth${prod ? "" : ".html"}`,
-  profile: `/${prod ? "" : "build/"}profile${prod ? "" : ".html"}`,
-  explore: `/${prod ? "" : "build/"}explore${prod ? "" : ".html"}`,
-  activity: `/${prod ? "" : "build/"}activity${prod ? "" : ".html"}`,
-  chat: `/${prod ? "" : "build/"}chat${prod ? "" : ".html"}`,
-  journal: `/${prod ? "" : "build/"}journal${prod ? "" : ".html"}`,
-}
+const pathname = getAllPathNames(prod);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -36,8 +26,6 @@ onAuthStateChanged(auth, (user) => {
       replaceWindow(pathname.auth, false);
     }
   }
-  
-  console.log(winLocation);
 });
 
 function navBarFunc() {
@@ -59,53 +47,12 @@ function navBarFunc() {
     console.log("chatBtn Pressed!");
     replaceWindow(pathname.chat);
   }
-  
   navigationBar.getElementsByClassName("profileBtn")[0].onclick = function() {
     console.log("profileBtn Pressed!");
     replaceWindow(pathname.profile);
   }
-
   navigationBar.getElementsByClassName("journalBtn")[0].onclick = function() {
     console.log("journalBtn Pressed!");
     replaceWindow(pathname.journal);
-  }
-}
-
-// Windows Helper Functions
-export function isPathName(pathName){
-  return (getPathName() == pathName);
-}
-
-export function isHashName(hashName) {
-  return (getHashName() == hashName);
-}
-
-export function getPathName(){
-  return winLocation.pathname.toLowerCase().split('/').pop().replace(".html","");
-}
-
-export function getHashName(){
-  return winLocation.hash.toLowerCase().slice(1);
-}
-
-export function replaceWindow(pathName, withHash = true, addToHistory = false){
-  if (addToHistory) {
-    winLocation.pathname = pathName;
-  } else {
-    if (withHash) {
-      window.location.replace(`${winLocation.origin}${pathName}#${winHash}`);
-    } else {
-      window.location.replace(`${winLocation.origin}${pathName}`);
-    }
-  }
-}
-
-export function onDocReady(fn) {
-  // see if DOM is already available
-  if (document.readyState === "complete" || document.readyState === "interactive") {
-      // call on next available tick
-      setTimeout(fn, 1);
-  } else {
-      document.addEventListener("DOMContentLoaded", fn);
   }
 }

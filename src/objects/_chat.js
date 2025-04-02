@@ -1,4 +1,3 @@
-import { doc } from "firebase/firestore";
 
 export const timestamp = function(time) {
     const div = document.createElement("div");

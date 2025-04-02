@@ -12,14 +12,15 @@ module.exports = {
     },
     entry: [
         './src/firebase/config.js',
-        './src/firebase/screen_manager.js',
+        './src/firebase/view_manager.js',
         './src/auth.js',
         './src/profile.js',
         './src/explore.js',
         './src/activity.js',
         './src/chat.js',
         './src/objects/_auth.js',
-        './src/objects/_chat.js'
+        './src/objects/_chat.js',
+        './src/objects/_window.js'
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
