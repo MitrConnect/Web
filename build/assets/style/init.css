@@ -17,24 +17,22 @@ a {
     background: radial-gradient(circle at bottom, #010003, #110125, #1b0339, #370c6c, #6328A4, #AF67E3, #DBBDE9);
 }
 
-.btn-main {
-    color: white;
+.btn-main, .label-main {
+    color: white !important;
     background-color: #882DD1 !important;
     border-color: #882DD1 !important;
 }
 
-.btn-outline-main {
-    color: white;
+.btn-outline-main, .label-outline-main {
+    color: white !important;
+    background-color: #4A4A4A !important;
     border-color: #882DD1 !important;
 }
 
 .btn-main:hover {
-    color: white;
     opacity: 75%;
 }
 
 .btn-outline-main:hover {
-    color: white;
-    background-color: #882DD1 !important;
-    border-color: #882DD1 !important;
+    opacity: 75%;
 }
