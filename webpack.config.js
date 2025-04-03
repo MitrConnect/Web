@@ -14,7 +14,8 @@ module.exports = {
         './src/firebase/config.js',
         './src/firebase/view_manager.js',
         './src/firebase/RTDB.js',
-        
+        './src/firebase/Auth.js',
+        './src/firebase/CloudDB.js',
 
         './src/auth.js',
         './src/profile.js',

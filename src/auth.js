@@ -1,53 +1,40 @@
-import { auth } from "./firebase/config.js";
 import { isPathName, onDocReady } from "./objects/_window.js";
 import { LoginUser, CreateUser, ForgotPassword, SignOut } from "./objects/_auth.js"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, validatePassword, signOut } from "firebase/auth";
+import * as Auth from "./firebase/Auth.js";
+import * as CloudDB from "./firebase/CloudDB.js"
 
 onDocReady(function() {
-  if (isPathName("auth")) {
+  if (isPathName("login")) {
     // API Call for Logging in user
     LoginUser().submit.onclick = function() {
-      let userInfo = LoginUser();
-      signInWithEmailAndPassword(auth, userInfo.email, userInfo.password)
+      let loginUser = LoginUser();
+      
+      Auth.signIn(loginUser.email, loginUser.password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode + ": " + errorMessage);
+        loginUser.popup.classList.remove("d-none");
+        loginUser.popup.innerText = error.code;
       });
     }
-
+  } else if (isPathName("createaccount")) {
     // API Call to Create New User
     CreateUser().submit.onclick = async function() {
-      let userInfo = CreateUser();
-      const status = await validatePassword(auth, userInfo.password)
-      if (status.isValid) {
-        createUserWithEmailAndPassword(auth, userInfo.email, userInfo.password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode + ": " + errorMessage);
-        });
-      } else {
-        if (containsUppercaseLetter && containsLowercaseLetter) {}
-        if (containsNonAlphanumericCharacter && containsNumericCharacter) {}
-        if (meetsMaxPasswordLength && meetsMinPasswordLength) {}
-      }
-    }
+      let createUser = CreateUser();
 
+      Auth.signUp(createUser.email, createUser.password)
+      .then((userCredential) => {
+      })
+      .catch((error) => {
+        createUser.popup.classList.remove("d-none");
+        createUser.popup.innerText = error.code;
+      });
+    }
+  } else if (isPathName("forgotpassword")) {
     // API Call for User Forgot Password
     ForgotPassword().submit.onclick = function() {
-      // Implement here
-
+      let forgotPassword = ForgotPassword();
     }
-    
   } else if (!isPathName("auth")) {
     // API Call for User to Sign Out
     const SignOutFunc = SignOut();
@@ -82,12 +69,9 @@ onDocReady(function() {
     }
 
     SignOutFunc.submit.onclick = function() {
-      signOut(auth).then(() => {
+      Auth.Out()
+      .then(() => {
         console.log("Sign-out successful");
-      }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode + ": " + errorMessage);
       });
     }
   }

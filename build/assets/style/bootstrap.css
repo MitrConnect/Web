@@ -67,3 +67,11 @@
 .w-90 {
     width: 90vw;
 }
+
+.rounded-circle {
+    margin-left: 10px;
+    width: 50px;  /* Fixed width for circle */
+    height: 50px; /* Fixed height for circle */
+    object-fit: cover; /* Ensures the image covers the circle */
+    border-radius: 50%; /* Makes it circular */
+}

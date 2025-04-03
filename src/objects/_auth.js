@@ -6,6 +6,7 @@ export const LoginUser = function() {
         password: loginView.querySelector("#password").value,
         presistent: loginView.querySelector("#rememberMe").value,
         submit: loginView.querySelector("#submitBtn"),
+        popup: loginView.querySelector("#popup")
     }
 }
 
@@ -16,7 +17,8 @@ export const CreateUser = function() {
         email: signupView.querySelector("#email").value,
         password: signupView.querySelector("#password").value,
         confirmPwd:  signupView.querySelector("#confirmPwd").value,
-        submit: signupView.querySelector("#submitBtn")
+        submit: signupView.querySelector("#submitBtn"),
+        popup: signupView.querySelector("#popup")
     }
 }
 
@@ -25,7 +27,8 @@ export const ForgotPassword = function() {
 
     return {
         email: forgotPwdView.querySelector("#email").value,
-        submit: forgotPwdView.querySelector("#submitBtn")
+        submit: forgotPwdView.querySelector("#submitBtn"),
+        popup: forgotPwdView.querySelector("#popup")
     }
 }
 

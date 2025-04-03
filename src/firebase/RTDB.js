@@ -1,5 +1,5 @@
 import { rtdb } from "./config.js";
-import { ref, set, get, update, child } from "firebase/database";
+import { ref, set, get, update, child, onValue } from "firebase/database";
 
 
 /**
@@ -20,10 +20,7 @@ import { ref, set, get, update, child } from "firebase/database";
  * });
  */
 export function WRITE(path, data) {
-  return set(ref(rtdb, `/${path}`), data)
-  .catch((error) => {
-    console.error("[RTDB] Error writting data entries: ", error);
-  });
+  return set(ref(rtdb, `/${path}`), data);
 }
 
 /**
@@ -46,9 +43,23 @@ export function WRITE(path, data) {
  *   });
  */
 export function READ(path) {
-  return get(child(ref(rtdb), `/${path}`))
-  .catch((error) => {
-    console.error("[RTDB] Error reading data entries: ", error);
+  return get(child(ref(rtdb), `/${path}`));
+}
+
+/**
+ * Listens for real-time updates at a specified path in Firebase Realtime Database.
+ *
+ * @param {string} path - The database path to listen for changes.
+ * @param {function(any): void} callback - A function to handle the updated data when changes occur.
+ *
+ * @example
+ * READ_RT("users/user123", (data) => {
+ *   console.log("Updated user data:", data);
+ * });
+ */
+export function READ_RT(path, callback) {
+  onValue(ref(rtdb, path), (snapshot) => {
+    callback(snapshot.val());
   });
 }
 
@@ -69,10 +80,7 @@ export function READ(path) {
  * });
  */
 export function UPDATE(data) {
-  return update(ref(db), data)
-  .catch((error) => {
-    console.error("[RTDB] Error update data entries: ", error);
-  });
+  return update(ref(db), data);
 }
 
 /**
@@ -97,8 +105,5 @@ export function REMOVE(pathList) {
     updates[path] = null;
   }
 
-  return update(ref(db), updates)
-  .catch((error) => {
-    console.error("[RTDB] Error removing data entries: ", error);
-  });
+  return update(ref(db), updates);
 }

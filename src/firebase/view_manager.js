@@ -1,5 +1,5 @@
 import { auth } from "./config.js";
-import * as rtdb from "./RTDB.js"
+import *  as CloudDB from "./CloudDB.js";
 import { onAuthStateChanged } from "firebase/auth";
 import { getAllPathNames, isPathName, isHashName, replaceWindow, onDocReady } from "../objects/_window.js";
 
