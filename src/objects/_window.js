@@ -1,7 +1,9 @@
 // Windows Helper Functions
 export function getAllPathNames(inProd){
     return {
-        auth: `/${inProd ? "" : "build/"}auth${inProd ? "" : ".html"}`,
+        login: `/${inProd ? "" : "build/"}auth/login${inProd ? "" : ".html"}`,
+        createaccount: `/${inProd ? "" : "build/"}auth/createaccount${inProd ? "" : ".html"}`,
+        forgotpassword: `/${inProd ? "" : "build/"}auth/forgotpassword${inProd ? "" : ".html"}`,
         profile: `/${inProd ? "" : "build/"}profile${inProd ? "" : ".html"}`,
         explore: `/${inProd ? "" : "build/"}explore${inProd ? "" : ".html"}`,
         activity: `/${inProd ? "" : "build/"}activity${inProd ? "" : ".html"}`,
@@ -11,6 +13,9 @@ export function getAllPathNames(inProd){
 }
 
 export function isPathName(pathName){
+    if (pathName == "auth") {
+        return (isPathName("login") || isPathName("createaccount") || isPathName("forgotpassword"));
+    }
     return (getPathName() == pathName);
 }
 
@@ -26,7 +31,7 @@ export function getHashName(){
     return window.location.hash.toLowerCase().slice(1);
 }
 
-export function replaceWindow(pathName, withHash = true, addToHistory = false){
+export function replaceWindow(pathName, withHash = false, addToHistory = false){
     const winLocation = window.location;
     const winHash = winLocation.hash.toLowerCase().slice(1);
 

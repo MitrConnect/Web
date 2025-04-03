@@ -1,73 +1,40 @@
-/* body {
-    position: relative;
-    background: none !important;
-    overflow: hidden;
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('../Icons/bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    filter: blur(5px);
-    z-index: -1;
-} */
-
-
-/* Light Mode */
-
-/* Text */
-.lm-btn{
-    color: #F6E6DA;
+a {
+    text-decoration: none;
 }
 
-/* Button */
-.lm-btn{
+.link-primary {
     color: black;
-    background-color: #F6E6DA;
-    border-color: #F6E6DA;
 }
 
-.lm-btn:hover{
-    color: black;
-    background-color: #F6E6DA;
-    border-color: #F6E6DA;
-    opacity: 75%;
+.bg-default {
+    background: radial-gradient(circle at bottom, #010003, #110125, #1b0339, #370c6c, #6328A4, #AF67E3, #DBBDE9);
 }
 
-/* Dark Mode */
-
-/* Text */
-.black-txt, .black-txt:link, .black-txt:visited, .black-txt:hover, .black-txt:link:active, .black-txt:visited:active {
-    color: black;
-    cursor: pointer;
-}
-
-.black-txt:hover {
-    color: black;
-    opacity: 75%;
-    cursor: pointer;
-}
-
-.dm-txt, .dm-txt:link, .dm-txt:visited, .dm-txt:hover, .dm-txt:link:active, .dm-txt:visited:active {
-    color: #E57A7A;
-    cursor: pointer;
-}
-
-/* Button */
-.dm-btn {
+.btn-main {
     color: white;
-    background-color: #E57A7A;
-    border-color: #E57A7A;
+    background-color: #882DD1 !important;
+    border-color: #882DD1 !important;
 }
 
-.dm-btn:hover {
+.btn-outline-main {
     color: white;
-    background-color: #E57A7A !important;
-    border-color: #E57A7A !important;
+    border-color: #882DD1 !important;
+}
+
+.btn-main:hover {
+    color: white;
     opacity: 75%;
+}
+
+.btn-outline-main:hover {
+    color: white;
+    background-color: #882DD1 !important;
+    border-color: #882DD1 !important;
 }

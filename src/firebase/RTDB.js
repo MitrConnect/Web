@@ -1,6 +1,7 @@
 import { rtdb } from "./config.js";
 import { ref, set, get, update, child } from "firebase/database";
 
+
 /**
  * Stores or overwrites data at the specified path in Firebase Realtime Database.
  *
